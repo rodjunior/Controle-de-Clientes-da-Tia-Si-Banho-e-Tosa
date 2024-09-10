@@ -1,6 +1,8 @@
 import smtplib
 from datetime import datetime, timedelta
 
+# e-mails automáticos para confirmar o agendamento de banhos.
+
 def agendar_banho(cliente, data_agendada):
     # Agendamento enviar e-mail
     msg = f"Olá {cliente['nome']}, o banho do seu animal {cliente['animais'][0]['nome']} está agendado para {data_agendada}."
