@@ -1,0 +1,20 @@
+from pymongo import MongoClient
+
+# Conexão BD
+client = MongoClient("mongodb://localhost:27017/")
+db = client["tia_si_banho_tosa"]
+collection = db["clientes"]
+
+# Exemplo inserção de dados 
+cliente = {
+    "nome": "João da Silva",
+    "telefone": "99999-9999",
+    "endereco": "Rua A, 123",
+    "animais": [
+        {"nome": "Rex", "raca": "Golden Retriever", "idade": 3},
+        {"nome": "Mimi", "raca": "Siamês", "idade": 2}
+    ]
+}
+
+# cliente no banco
+collection.insert_one(cliente)
