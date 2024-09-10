@@ -10,9 +10,17 @@ data = {
     "frequencia_banho": [3, 2, 4, 1]
 }
 
+# uma forma de criar dataframe
 df = pd.DataFrame(data)
 
-# frequência de banhos por animal
-sns.barplot(x="animal", y="frequencia_banho", data=df)
+# frequência de banhos por animal para grafico
+plt.figure(figsize=(10, 6))
+sns.barplot(x="animal", y="frequencia_banho", data=df, palette="viridis")
 plt.title("Frequência de Banhos por Animal")
+plt.xlabel("Animal")
+plt.ylabel("Frequência de Banho")
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# mostrar o gráfico
 plt.show()
