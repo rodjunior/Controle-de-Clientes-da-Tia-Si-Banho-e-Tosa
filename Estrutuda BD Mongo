@@ -18,3 +18,7 @@ cliente = {
 
 # cliente no banco
 collection.insert_one(cliente)
+
+# evitar erros
+except (ConnectionError, ServerSelectionTimeoutError) as e:
+    print(f"Erro de conexão com o MongoDB: {e}")
