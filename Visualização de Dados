@@ -1,0 +1,18 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# dados:
+data = {
+    "cliente": ["João", "Maria", "Pedro", "Ana"],
+    "animal": ["Rex", "Mimi", "Thor", "Bolota"],
+    "raca": ["Golden Retriever", "Siamês", "Bulldog", "Poodle"],
+    "frequencia_banho": [3, 2, 4, 1]
+}
+
+df = pd.DataFrame(data)
+
+# frequência de banhos por animal
+sns.barplot(x="animal", y="frequencia_banho", data=df)
+plt.title("Frequência de Banhos por Animal")
+plt.show()
