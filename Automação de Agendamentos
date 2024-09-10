@@ -1,0 +1,24 @@
+import smtplib
+from datetime import datetime, timedelta
+
+def agendar_banho(cliente, data_agendada):
+    # Agendamento (exemplo: enviar e-mail)
+    msg = f"Olá {cliente['nome']}, o banho do seu animal {cliente['animais'][0]['nome']} está agendado para {data_agendada}."
+    
+    # Configurações de e-mail fictícios
+    server = smtplib.SMTP('smtp.exemplo.com', 587)
+    server.starttls()
+    server.login("seuemail@exemplo.com", "senha")
+    
+    # Enviar o e-mail
+    server.sendmail("seuemail@exemplo.com", cliente["email"], msg)
+    server.quit()
+
+cliente_exemplo = {
+    "nome": "João da Silva",
+    "email": "joao@exemplo.com",
+    "animais": [{"nome": "Rex", "raca": "Golden Retriever", "idade": 3}]
+}
+
+data_agendada = datetime.now() + timedelta(days=2)
+agendar_banho(cliente_exemplo, data_agendada)
